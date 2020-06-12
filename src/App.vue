@@ -1,17 +1,20 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">    
+    <Tareas v-if="this.$store.state.estaLogueado == 1 "/>
+    <Login v-else/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Tareas from './components/Tareas.vue'
+import Login from './components/Login.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Tareas,
+    Login
   }
 }
 </script>
